@@ -1,0 +1,26 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.form{
+    height: 100vh;
+}
+@keyframes image {
+    0% {top: 0px;}
+    50% {top:25px;}
+    100% {top:0px;}
+
+    
+}
+.img{
+    animation: image 6s infinite ease-in-out;
+    position: relative;
+
+}
+.bgimg{
+    width: 50%;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center form flex-wrap">
+        <div class="bgimg d-flex justify-content-center ">
+            <img src="{{url_for('static', filename='Login.jpg')}}" class="w-50 col-2 img" alt="">
+        </div>
+        <form class="col d-flex justify-content-center align-items-center container-sm h-100 " action="register" method="POST">
+            <div class="col-sm-8">
+                <h1 class="d-flex justify-content-center">Register</h1>
+
+                <div class="form-group pt-3">
+                    <label>Username</label>
+                    <input type="text" name = "username" class="form-control" placeholder="Enter Username">
+                </div>
+                {%if error%}
+                <span class = "text-danger">This user already exists</span>
+                {%endif%}
+    
+                <div class="form-group pt-3 gap-2 d-flex">
+                    <div class="d-grid">
+                        <label>First Name</label>
+                        <input type="text" name = "firstname" class="form-control" placeholder="Enter First Name">
+                    </div>
+                    <div class="d-grid">
+                        <label>Last Name</label>
+                        <input type="text" name="lastname" class="form-control" placeholder="Enter Last Name">
+                    </div>
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    {%if email_error%}
+                    <span class = "text-danger">This email is already taken</span>
+                    {%else%}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    {%endif%}
+                </div>
+                  <div class="form-group pt-3">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="pt-3 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary col-12">Register</button>
+                  </div>
+                  <div>
+                    <small class="form-text text-muted d-flex justify-content-center pt-3">Already have an account?&nbsp<a href="login.html"> Login</a></small>
+                  </div>
+            </div>
+            
+
+            
+        </form>
+    </div>
+</body>
+</html>
